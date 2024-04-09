@@ -27,11 +27,11 @@ dataset.
 
 ### Authors:
 
-- Simon E. Sanchez Viloria
-- Andres Ruiz Calvo
-- Daniel De Las Cuevas Turel
-- Enrique Botía Barbera
-- Zijun He
+- Aaron
+- Jheralyn
+- Ernesto
+- Jeremieh
+
 
 
 **Try uploading your own ECG!**
