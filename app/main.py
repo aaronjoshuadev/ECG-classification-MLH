@@ -20,8 +20,7 @@ st.set_page_config(
 st.write("""
 # 🫀 ECG Classification
 
-For this app, we trained a model to detect heart anomalies based on the [Physionet 2017 Cardiology Challenge](https://physionet.org/content/challenge-2017/1.0.0/) 
-dataset.
+For this app, we trained a model to detect heart anomalies based on the Caloocan North Hospital dataset.
 
 **Possible Predictions:** Atrial Fibrillation, Normal, Other Rhythm, or Noise
 
@@ -159,7 +158,7 @@ else:
     st.sidebar.markdown("Remove the file above to demo using the validation set.")
 
 st.sidebar.markdown("---------------")
-st.sidebar.markdown("Check the [Github Repository](https://github.com/simonsanvil/ECG-classification-MLH) of this project")
+#st.sidebar.markdown("Check the [Github Repository](https://github.com/simonsanvil/ECG-classification-MLH) of this project")
 #---------------------------------#
 # Main panel
 
