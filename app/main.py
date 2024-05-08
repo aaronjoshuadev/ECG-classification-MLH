@@ -31,14 +31,6 @@ For this app, we trained a model to detect heart anomalies based on the dataset 
 **Other:** "Other rhythm" typically indicates a heart rhythm that is not classified as normal or as one of the common arrhythmias such as atrial fibrillation or ventricular tachycardia. It could encompass a range of less common or less easily identifiable rhythm abnormalities.
 
 **Noise:** In the context of heart monitoring or signal processing, "noise" refers to any unwanted or irrelevant signals that may distort or obscure the desired signal (in this case, the heart rhythm). Noise can arise from various sources such as electromagnetic interference, movement artifacts, or electrical disturbances, and it can make accurate interpretation of the heart rhythm more challenging.
-### Authors:
-
-- Aaron
-- Jheralyn
-- Ernesto
-- Jeremieh
-
-
 
 **Try uploading your own ECG!**
 
@@ -160,12 +152,22 @@ if uploaded_file is None:
             f = open("data/validation/"+pre_trained_ecg, 'rb')
             if not uploaded_file:
                 uploaded_file = f
-        st.sidebar.markdown("Source: Physionet 2017 Cardiology Challenge")
+        #st.sidebar.markdown("Source: Physionet 2017 Cardiology Challenge")
 else:
     st.sidebar.markdown("Remove the file above to demo using the validation set.")
 
 st.sidebar.markdown("---------------")
 #st.sidebar.markdown("Check the [Github Repository](https://github.com/simonsanvil/ECG-classification-MLH) of this project")
+st.write("""
+
+### Authors:
+
+- Aaron
+- Jheralyn
+- Ernesto
+- Jeremieh
+
+""".strip())
 #---------------------------------#
 # Main panel
 
