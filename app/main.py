@@ -20,10 +20,17 @@ st.set_page_config(
 st.write("""
 # 🫀 ECG Classification
 
-For this app, we trained a model to detect heart anomalies based on the Caloocan North Hospital dataset.
+For this app, we trained a model to detect heart anomalies based on the dataset from Camarin Caloocan North Hospital.
 
 **Possible Predictions:** Atrial Fibrillation, Normal, Other Rhythm, or Noise
 
+**Atrial Fibrillation:** Atrial fibrillation (AF) is a heart condition characterized by an irregular and often rapid heart rate that can lead to poor blood flow. It is caused by chaotic electrical impulses in the heart's upper chambers (atria). Symptoms may include palpitations, shortness of breath, and weakness. AF increases the risk of stroke and heart failure.
+
+**Normal:** In the context of heart rhythms, "normal" refers to a regular and healthy heart rhythm, where electrical impulses within the heart occur in a coordinated manner, resulting in an effective pumping of blood throughout the body.
+
+**Other:** "Other rhythm" typically indicates a heart rhythm that is not classified as normal or as one of the common arrhythmias such as atrial fibrillation or ventricular tachycardia. It could encompass a range of less common or less easily identifiable rhythm abnormalities.
+
+**Noise:** In the context of heart monitoring or signal processing, "noise" refers to any unwanted or irrelevant signals that may distort or obscure the desired signal (in this case, the heart rhythm). Noise can arise from various sources such as electromagnetic interference, movement artifacts, or electrical disturbances, and it can make accurate interpretation of the heart rhythm more challenging.
 ### Authors:
 
 - Aaron
