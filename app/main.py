@@ -18,7 +18,7 @@ st.set_page_config(
 
 # PAge Intro
 st.write("""
-# 🫀 ECG Classification
+# 🫀 Deep Insight CNN Based Image ECG Analysis
 
 For this app, we trained a model to detect heart anomalies based on the dataset from **Camarin Caloocan North Hospital**.
 
