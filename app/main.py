@@ -20,9 +20,9 @@ st.set_page_config(
 st.write("""
 # 🫀 ECG Classification
 
-For this app, we trained a model to detect heart anomalies based on the dataset from Camarin Caloocan North Hospital.
+For this app, we trained a model to detect heart anomalies based on the dataset from **Camarin Caloocan North Hospital**.
 
-**Possible Predictions:** Atrial Fibrillation, Normal, Other Rhythm, or Noise
+**Possible Predictions:** *Atrial Fibrillation*, *Normal*, *Other Rhythm*, or *Noise*
 
 **Atrial Fibrillation:** Atrial fibrillation (AF) is a heart condition characterized by an irregular and often rapid heart rate that can lead to poor blood flow. It is caused by chaotic electrical impulses in the heart's upper chambers (atria). Symptoms may include palpitations, shortness of breath, and weakness. AF increases the risk of stroke and heart failure.
 
@@ -162,7 +162,7 @@ st.write("""
 
 ### Authors:
 
-- Aaron
+- Aaron 
 - Jheralyn
 - Ernesto
 - Jeremieh
