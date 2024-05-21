@@ -10,7 +10,7 @@ from src.visualization import plot_ecg
 # Page layout
 ## Page expands to full width
 st.set_page_config(
-    page_title='🫀 ECG Classification',
+    page_title='🫀 Deep Insight ECG Analysis',
     # anatomical heart favicon
     page_icon="https://api.iconify.design/openmoji/anatomical-heart.svg?width=500",
     layout='wide'
