@@ -6,6 +6,15 @@ import scipy.io
 # from tensorflow import keras
 from src.visualization import plot_ecg
 
+
+def creds_entered():
+    if st.session_state["user"].strip() == "admin" and st.session_state["passwd"].strip() == "admin":
+        st.session_state["authenticated"] = True
+    else:
+        st.session_state["authenticated"] = False
+        st.error("Invalid Username/Password :face_with_raised_eyebrow:")
+
+
 def authenticate_user():
     if "authenticated" not in st.session_state:
         st.session_state["authenticated"] = False
@@ -19,6 +28,7 @@ def authenticate_user():
 
 
 if authenticate_user():
+    st.write("User authenticated!")
 #---------------------------------#
 # Page layout
 ## Page expands to full width
