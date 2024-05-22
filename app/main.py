@@ -205,8 +205,6 @@ if uploaded_file is not None:
 
     # st.line_chart(np.concatenate(ecg).ravel().tolist())
 
-
-# Dictionary to store username-password pairs (Replace with your actual user credentials)
 USER_CREDENTIALS = {
     'user1': 'password1',
     'user2': 'password2',
@@ -236,15 +234,6 @@ def main_page():
     st.title('Main Page')
     st.write('Welcome to the main page!')
     # Add your existing Streamlit app code here
-
-# Page layout
-## Page expands to full width
-st.set_page_config(
-    page_title='🫀 Deep Insight CNN Based Image ECG Analysis',
-    # anatomical heart favicon
-    page_icon="https://api.iconify.design/openmoji/anatomical-heart.svg?width=500",
-    layout='wide'
-)
 
 # Check if user is logged in
 if 'logged_in' not in st.session_state:
