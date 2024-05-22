@@ -66,10 +66,31 @@ def read_ecg_preprocessing(uploaded_ecg):
 model_path = 'models/weights-best.hdf5'
 classes = ['Normal','Atrial Fibrillation','Other','Noise']
 
-@st.cache_resource
-def get_model(model_path):
-    model = load_model(f'{model_path}')
-    return model
+def creds_entered():
+    if st.session_state["user"].strip() == "admin" and st.session_state["passwd"].strip() =="admin":
+        st.session_state["authenticated"] = True
+    else:
+        st.session_state["authenticated"] = False
+        st.error("Invalid Username/Password :face_with_raised_eyebrow:")
+def authenticate_user():
+        if "authenticated" in st.session_state:
+                st.text_input(label="Username: ", value="", key="user", on_change=creds_entered)
+                st.text_input(label="Password: ", value="", key="passwd", type="password", on_change=creds_entered)
+                return False
+        else:
+            if st.session_state["authenticated"]:
+                return True
+            else:
+                st.text_input(label="Username: ", value="", key="user", on_change=creds_entered)
+                st.text_input(label="Password: ", value="", key="passwd", type="password", on_change=creds_entered)
+
+                return False
+if authenticate_user():
+
+    @st.cache_resource
+    def get_model(model_path):
+        model = load_model(f'{model_path}')
+        return model
 
 @st.cache_resource
 def get_prediction(data,_model):
