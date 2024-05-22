@@ -204,3 +204,53 @@ if uploaded_file is not None:
         st.markdown(mkd_pred_table)
 
     # st.line_chart(np.concatenate(ecg).ravel().tolist())
+
+
+# Dictionary to store username-password pairs (Replace with your actual user credentials)
+USER_CREDENTIALS = {
+    'user1': 'password1',
+    'user2': 'password2',
+    'user3': 'password3'
+}
+
+def login():
+    st.title('Login')
+
+    username = st.text_input('Username')
+    password = st.text_input('Password', type='password')
+
+    if st.button('Login'):
+        if username in USER_CREDENTIALS:
+            if USER_CREDENTIALS[username] == password:
+                st.success('Logged in successfully!')
+                # Set a session variable to indicate user is logged in
+                st.session_state.logged_in = True
+                # Redirect user to main page or dashboard
+                main_page()
+            else:
+                st.error('Invalid username or password')
+        else:
+            st.error('User not found')
+
+def main_page():
+    st.title('Main Page')
+    st.write('Welcome to the main page!')
+    # Add your existing Streamlit app code here
+
+# Page layout
+## Page expands to full width
+st.set_page_config(
+    page_title='🫀 Deep Insight CNN Based Image ECG Analysis',
+    # anatomical heart favicon
+    page_icon="https://api.iconify.design/openmoji/anatomical-heart.svg?width=500",
+    layout='wide'
+)
+
+# Check if user is logged in
+if 'logged_in' not in st.session_state:
+    st.session_state.logged_in = False
+
+if not st.session_state.logged_in:
+    login()
+else:
+    main_page()
