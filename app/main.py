@@ -5,6 +5,39 @@ import scipy.io
 # import pathlib
 # from tensorflow import keras
 from src.visualization import plot_ecg
+import pickle
+from pathlib import Path
+import streamlit_authenticator as stauth
+
+
+names = ["Peter Parker", "Aaron Joshua"]
+usernames = ["pparker", "aaronjosh"]
+
+file_path = Path(__file__).parent / "hashed_pw.pkl"
+with file_path.open("rb") as file:
+    hashed_passwords = pickle.load(file)
+
+authenticator = stauth.Authenticate(names, usernames, hashed_passwords, "deep-insight-ecg-analysis", "abcdef", cookie_expiry_days=30)
+
+name, authentication_status, usernames = authenticator.login("Login", "main")
+
+if authentication_status == False:
+    st.error("Username/password is incorrect")
+
+if authentication_status == None:
+    st.warning("Please enter your username and password")
+
+
+
+    # ---- HIDE STREAMLIT STYLE ----
+    hide_st_style = """
+                <style>
+                #MainMenu {visibility: hidden;}
+                footer {visibility: hidden;}
+                header {visibility: hidden;}
+                </style>
+                """
+    st.markdown(hide_st_style, unsafe_allow_html=True)
 
 
 #---------------------------------#
