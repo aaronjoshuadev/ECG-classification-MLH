@@ -74,24 +74,10 @@ def creds_entered():
         st.error("Invalid Username/Password :face_with_raised_eyebrow:")
 
 
-def authenticate_user():
-    if "authenticated" not in st.session_state:
-        st.session_state["authenticated"] = False
-
-    if st.session_state["authenticated"]:
-        return True
-    else:
-        st.text_input(label="Username: ", value="", key="user", on_change=creds_entered)
-        st.text_input(label="Password: ", value="", key="passwd", type="password", on_change=creds_entered)
-        return False
-
-
-if authenticate_user():
-
-    @st.cache_resource
-    def get_model(model_path):
-        model = load_model(f'{model_path}')
-        return model
+@st.cache_resource
+def get_model(model_path):
+    model = load_model(f'{model_path}')
+    return model
 
 @st.cache_resource
 def get_prediction(data,_model):
@@ -181,11 +167,23 @@ else:
 
 st.sidebar.markdown("---------------")
 #st.sidebar.markdown("Check the [Github Repository](https://github.com/simonsanvil/ECG-classification-MLH) of this project")
+def authenticate_user():
+    if "authenticated" not in st.session_state:
+        st.session_state["authenticated"] = False
 
+    if st.session_state["authenticated"]:
+        return True
+    else:
+        st.text_input(label="Username: ", value="", key="user", on_change=creds_entered)
+        st.text_input(label="Password: ", value="", key="passwd", type="password", on_change=creds_entered)
+        return False
+
+
+if authenticate_user():
 #---------------------------------#
 # Main panel
 
-model = get_model(f'{model_path}')
+    model = get_model(f'{model_path}')
 
 if uploaded_file is not None:
     #st.write(uploaded_file)
