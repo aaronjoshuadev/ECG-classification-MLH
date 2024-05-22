@@ -7,28 +7,6 @@ import scipy.io
 from src.visualization import plot_ecg
 
 
-def creds_entered():
-    if st.session_state["user"].strip() == "admin" and st.session_state["passwd"].strip() == "admin":
-        st.session_state["authenticated"] = True
-    else:
-        st.session_state["authenticated"] = False
-        st.error("Invalid Username/Password :face_with_raised_eyebrow:")
-
-
-def authenticate_user():
-    if "authenticated" not in st.session_state:
-        st.session_state["authenticated"] = False
-
-    if st.session_state["authenticated"]:
-        return True
-    else:
-        st.text_input(label="Username: ", value="", key="user", on_change=creds_entered)
-        st.text_input(label="Password: ", value="", key="passwd", type="password", on_change=creds_entered)
-        return False
-
-
-if authenticate_user():
-    st.write("User authenticated!")
 #---------------------------------#
 # Page layout
 ## Page expands to full width
