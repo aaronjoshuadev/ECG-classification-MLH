@@ -6,8 +6,8 @@ import scipy.io
 # from tensorflow import keras
 from src.visualization import plot_ecg
 import pickle
-from pathlib import Path
 import streamlit_authenticator as stauth
+from pathlib import Path
 
 names = ["Peter Parker", "Aaron Joshua"]
 usernames = ["pparker", "aaronjosh"]
@@ -27,6 +27,8 @@ if authentication_status == None:
     st.warning("Please enter your username and password")
 
 
+    # ---- SIDEBAR ----
+    authenticator.logout("Logout", "sidebar")
 
     # ---- HIDE STREAMLIT STYLE ----
     hide_st_style = """
